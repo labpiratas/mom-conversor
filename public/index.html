@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MOM Conversor - #LabPirata</title>
+    <link rel="stylesheet" href="./helpers.min.css">
+  </head>
+  <body text="Tahoma gray-80" layout="border-sizing-all">
+    <header layout="max-960 center">
+      <h1>Conversor de Texto MOM</h1>
+    </header>
+    <div text="white" layout="max-960 center h-padding-40 v-padding-30 v-margin-30 rounded blue fix">
+      <h2 layout="no-top">Cole abaixo o texto a ser convertido: </h2>
+      <textarea id="texto" rows="8" layout="fluid"></textarea>
+      <h2 layout="top-30">Resultado: </h2>
+      <textarea id="resultado" rows="8" layout="fluid" readonly></textarea>
+      <div text="center">
+        <button text="1.2em" onclick="converter($get('texto').value, 'resultado')">Converter</button>
+        <button text="1.2em" layout="self-end" onclick="saveTextAsFile($get('resultado').value)">Baixar .txt</button>
+      </div>
+    </div>
+    <script>
+    var $get = function (id) {
+      return document.getElementById(id)
+    }
+    var converter = function (txt, id) {
+      txt = txt.replace(/\n/g, '       ')
+      txt = txt.replace(/              /g, '       ')
+      $get(id).value = txt
+    }
+    // https://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/
+    function saveTextAsFile(textToSave) {
+      var textToSaveAsBlob = new Blob([textToSave], {type: 'text/plain'})
+      var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob)
+
+      var downloadLink = document.createElement('a')
+      downloadLink.download = 'texto.txt'
+      downloadLink.innerHTML = 'Download File'
+      downloadLink.href = textToSaveAsURL
+      downloadLink.onclick = function (event) {
+        document.body.removeChild(event.target)
+      }
+      downloadLink.style.display = 'none'
+      document.body.appendChild(downloadLink)
+      downloadLink.click()
+    }
+    </script>
+  </body>
+</html>
