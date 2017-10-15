@@ -12,14 +12,24 @@
   textarea {overflow-y:scroll; border:0; border-radius:3px 0 0 3px}
   button {border:0; border-radius:3px; background: #532f91; color:white; padding:12px 16px; font-weight:600; cursor:pointer}
   button:hover {opacity: .9}
-  #areaDeTrabalho button {background: rgba(255, 255, 255, .15)}
-  #areaDeTrabalho button:hover {background: rgba(255, 255, 255, .25); opacity:1}
-  body > header > menu a {text-decoration:none; color: #333; font-weight: 300; display: inline-block; padding:10px 15px}
-  body > header > menu a:hover {text-decoration:underline}
+  menu {padding:0}
+  #header > menu a {text-decoration:none; color: #333; font-weight: 300; display: inline-block; padding:10px 15px}
+  #header > header > menu a:hover {text-decoration:underline}
+  #conversor button {background: rgba(255, 255, 255, .15)}
+  #conversor button:hover {background: rgba(255, 255, 255, .25); opacity:1}
+  #sobre p {padding:0 15px}
+  @media (max-width: 480px) {
+    #header {display:block; text-align: center}
+    #header menu a {padding: 10px 10px}
+    #conversor [cols] {width:100%}
+    #conversor button {font-size:1em}
+    #colaboradores [layout~='right-40'] {margin:0!important; margin-bottom: 20px!important}
+    footer [cols] {width:100%; float:none; padding:20px !important; text-align: center}
+  }
   </style>
 </head>
 <body text="Ubuntu gray-80 line-1.5" layout="border-sizing-all no-margin">
-  <header layout="max-960 center top-10 flex items-center">
+  <header id="header" layout="max-960 center top-10 flex items-center">
     <span layout="grow">
       <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/MOM.png" width="160" alt="MEMORY OF MANKIND">
     </span>
@@ -29,9 +39,9 @@
       <a href="http://labpirata.com" target="_blank">LabPirata</a>
     </menu>
   </header>
-  <section id="areaDeTrabalho" style="background: #532f91">
+  <section id="conversor" style="background: #532f91">
     <div text="white" layout="max-960 center v-padding-30 top-15 fix">
-      <div cols="2" text="center">
+      <div cols="2" text="center" onmobile="hidden">
         <br>
         <br>
         <br>
@@ -69,7 +79,7 @@
           </div>
         </div>
       </div>
-      <div cols="2">
+      <div cols="2" onmobile="hidden">
         <br>
         <br>
         <br>
@@ -192,9 +202,44 @@
     </div>
   </section>
 
-  <footer text="white center" layout="gray-80 v-padding-20" links="no-decoration white hover-orange">
+  <footer text="white .9em line-1.75" layout="gray-80 v-padding-40 fix" links="no-decoration gray-20 hover-orange">
     <div layout="max-960 center">
-      <a href="http://labpirata.com">LabPirata</a>
+      <div cols="3">
+        <a href="http://labpirata.com" target="_blank">
+          <img src="/labpirata.png" alt="">
+          <br>
+          <span text="gray-20">
+            O LabPirata é uma incubadora de <br>
+            projetos tecnológicos que desenvolve <br>
+            inovação para pessoas e coletivos.
+          </span>
+        </a>
+      </div>
+      <div cols="3" layout="top-10" style="padding-left:50px">
+        <b layout="inline-block bottom-10">Mapa do site</b> <br>
+        <a href="#header">Conversor</a> <br>
+        <a href="#sobre">Sobre</a> <br>
+        <a href="#colaboradores">Colaboradores</a>
+      </div>
+      <div cols="3" layout="top-10">
+        <b layout="inline-block bottom-10">Links Úteis</b> <br>
+        <a href="https://www.memory-of-mankind.com/" target="_blank">MOM</a> <br>
+      </div>
+      <div cols="3">
+        <a layout="inline-block top-10" href="https://www.facebook.com/LabPiratas" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+        &nbsp; &nbsp;
+        <a href="https://www.youtube.com/channel/UCU6m4HnIoBo77XppAINqZ4g" target="_blank"><i class="fa fa-youtube-play fa-2x"></i></a>
+        &nbsp; &nbsp;
+        <a href="https://www.instagram.com/labpiratas/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+        &nbsp; &nbsp;
+        <a href="https://github.com/labpiratas" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+        <p text=".8em">
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+            CC BY <i class="fa fa-creative-commons"></i> ALGUNS DIREITOS RESERVADOS <br>
+            <small>(pode copiar o conteúdo desde que cite o autor)</small>
+          </a>
+        </p>
+      </div>
     </div>
   </footer>
 
@@ -206,6 +251,7 @@
   var converter = function (txt, id) {
     txt = txt.replace(/[\n]{1,}/g, '\n')
     txt = txt.replace(/\n/g, '       ')
+    txt = txt.replace(/[ ]{7,}/g, '       ')
     $('#areaTexto').fadeOut(function () {
       $('#resultado').val(txt)
       $('#areaResultado').fadeIn()
@@ -234,5 +280,15 @@
     downloadLink.click()
   }
   </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1871974-23"></script>
+  <script>
+  window.dataLayer = window.dataLayer || []
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date())
+  gtag('config', 'UA-1871974-23')
+  </script>
+
 </body>
 </html>
