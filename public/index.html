@@ -10,7 +10,7 @@
   hr {width: 120px; margin: 0 auto; border:0; border-top: 1px solid rgba(0, 0, 0, .15); margin-bottom:40px }
   h2.editor {font-size: 1.2em; margin-bottom:5px; font-weight:400}
   textarea {overflow-y:scroll; border:0; border-radius:3px 0 0 3px}
-  button {border:0; border-radius:3px; background: #532f91; color:white; padding:12px 16px; font-weight:600; cursor:pointer}
+  button {border:0; border-radius:3px; background: #77478b; color:white; padding:12px 16px; font-weight:600; cursor:pointer}
   button:hover {opacity: .9}
   menu {padding:0}
   #header > menu a {text-decoration:none; color: #333; font-weight: 300; display: inline-block; padding:10px 15px}
@@ -18,6 +18,8 @@
   #conversor button {background: rgba(255, 255, 255, .15)}
   #conversor button:hover {background: rgba(255, 255, 255, .25); opacity:1}
   #sobre p {padding:0 15px}
+  #sobre a {text-decoration: underline;}
+  #sobre a:hover {color:#77478b}
   @media (max-width: 480px) {
     #header {display:block; text-align: center}
     #header menu a {padding: 10px 10px}
@@ -39,7 +41,7 @@
       <a href="http://labpirata.com" target="_blank">LabPirata</a>
     </menu>
   </header>
-  <section id="conversor" style="background: #532f91">
+  <section id="conversor" style="background: #77478b">
     <div text="white" layout="max-960 center v-padding-30 top-15 fix">
       <div cols="2" text="center" onmobile="hidden">
         <br>
@@ -100,15 +102,23 @@
       <h2>Sobre</h2>
       <hr>
       <div layout="inline-block right-40  center" style="max-width: 700px">
-        <p>
+        <h3>
           MOM - Memory of Mankind
-        </p>
+        </h3>
         <p>
-          <a href="http://memory-of-mankind.com/" target=<strong>Site oficial</strong>
-          <a href="https://pt.wikipedia.org/wiki/Memory_of_Mankind" target=<strong>Wikipédia</strong>
-          <a href="https://en.wikipedia.org/wiki/Memory_of_Mankind" target=<strong>English Wikipedia</strong>
+          <a href="http://memory-of-mankind.com/" target="_blank">
+            <strong>Site oficial</strong>
+          </a>
+          |
+          <a href="https://pt.wikipedia.org/wiki/Memory_of_Mankind" target="_blank">
+            <strong>Wikipédia</strong>
+          </a>
+          |
+          <a href="https://en.wikipedia.org/wiki/Memory_of_Mankind" target="_blank">
+            <strong>English Wikipedia</strong>
+          </a>
         <p>
-          O MOM foi criado por Martin Kunze (um artista que trabalha com cerâmica) para resolver um
+          O <strong>MOM</strong> foi criado por <strong>Martin Kunze</strong> (um artista que trabalha com cerâmica) para resolver um
           problema: vendo que a maior parte da nossa vida e produção cultural atual é feita digital, terá
           alguma coisa para historiadores do futuro aproveitarem?
           Bem, um grande problema é: hoje em dia a quantidade de conteúdo criada online é imensa! Mas
@@ -116,9 +126,10 @@
           grande número na internet (fazendo com que descobertas científicas se afoguem em um mar de
           besteira).
         </p>
-        <p>
-          O que queremos que as futuras gerações tenham de nós? Nossa curiosidade ou descobertas? Ou memes?
-        </p>
+        <h3>
+          O que queremos que as futuras gerações tenham de nós? <br>
+          Nossa curiosidade ou descobertas? Ou memes?
+        </h3>
         <p>
           Imagino que muitos de vocês já tenham tido defeitos no pc que fez com que tudo o que tinham
           salvo fosse apagado e ainda o fato de que as formas de armazenamento mudam e estragam em um
@@ -131,13 +142,12 @@
             Um grande problema é que as empresas de internet também emitem CO2, o que pode fazer com que
             no futuro sejamos obrigados a deletar muita coisa para salvar o planeta.
           </p>
-          <p>
+          <h3>
             Solução? Tablets de argila. Como assim?
-          </p>
+          </h3>
           <p>
             Martin, tendo trabalhado com esse material e preocupado com a nossa época poder cair num grande
-            esquecimento (uma tempestade solar forte também pode fritar a Internet -
-            https://en.wikipedia.org/wiki/Solar_storm_of_1859 -) pensou na forma de armazenamento mais
+            esquecimento (uma <a href="https://en.wikipedia.org/wiki/Solar_storm_of_1859" target="_blank">tempestade</a> solar forte também pode fritar a Internet) pensou na forma de armazenamento mais
             antiga (desde o Antigo Egito e até antes) e que ainda funciona: tablets de argila.
           </p>
           <p>
@@ -146,18 +156,18 @@
             aguentar o calor de 1200°C, químicos, água, radiação, magnetismo, pressão e etc por até mais de 1
             milhão de anos!
           </p>
-          <p>
+          <h3>
             O que armazenar? Tudo!
-          </p>
+          </h3>
           <p>
             Livros, páginas fdo facebook, blogs, artigos, revistas, comentários, livros pessoais e até diários!
             Sim! Você pode armazenar a sua história aqui!
             Todos que participam ganham um Token e a possibilidade de fazer UM tablet com fotos pessoais
             (caso você faça doação em dinheiro, pode fazer mais e ganhar mais Tokens).
           </p>
-          <p>
+          <h3>
             Como participar?
-          </p>
+          </h3>
           <p>
             A participação é gratuíta! Você pode mandar o que quiser (o formato foi discutido no último post)
             com alguns detalhes:
@@ -181,13 +191,13 @@
     </div>
   </section>
 
-  <section id="colaboradores" style="background: #eee" layout="fix">
+  <section id="colaboradores" layout="gray-10 fix">
     <div text="center" layout="max-960 center v-padding-30 bottom-40 fix" links="no-decoration gray-80">
       <h2>Colaboradores</h2>
       <hr>
       <div layout="inline-block right-40">
-        <a href="http://araujo.cc" target="_blank" layout="flex items-center">
-          <img src="https://s.gravatar.com/avatar/76c7bfe1872bfa53e4c5b65330ca2b6e?s=80&r=g" alt="Arthur Araújo" layout="few-rounded">
+        <a href="https://www.facebook.com/ErickSoaresFigueiredo" target="_blank" layout="flex items-center">
+          <img src="https://s.gravatar.com/avatar/76c7bfe1872bfa53e4c5b65330ca2b6e?s=80&r=g" alt="Erick Soares" layout="few-rounded">
           <span text="left" layout="left-10">
             <strong>Erick Soares</strong> <br>
             Idealizador
@@ -249,6 +259,23 @@
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script>
+  // smooth scrollTo
+  document.querySelectorAll('a[href*="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      try {
+        e.preventDefault()
+        window.scroll({
+          top: document.querySelector(this.getAttribute('href')).offsetTop,
+          left: 0,
+          behavior: 'smooth'
+        })
+        return false
+      } catch (e) {
+        console.log(e)
+        return true
+      }
+    })
+  })
   var $get = function (id) {
     return document.getElementById(id)
   }
