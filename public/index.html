@@ -284,6 +284,7 @@
     txt = txt.replace(/[\n]{1,}/g, '\n')
     txt = txt.replace(/\n/g, '       ')
     txt = txt.replace(/[ ]{7,}/g, '       ')
+    txt = txt.trim()
     $('#areaTexto').fadeOut(function () {
       $('#resultado').val(txt)
       $('#areaResultado').fadeIn()
